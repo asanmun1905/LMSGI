@@ -1,0 +1,19 @@
+<libreria>
+
+    <libro>
+        <titulo></titulo>
+        <autor></autor>
+        <publicacion></publicacion>
+    </libro>
+    <libro>
+        <titulo></titulo>
+        <autor></autor>
+        <publicacion></publicacion>
+    </libro>
+    <libro>
+        <titulo></titulo>
+        <autor></autor>
+        <publicacion></publicacion>
+    </libro>
+
+</libreria>

@@ -1,0 +1,10 @@
+<!ELEMENT banco (sucursal+)>
+<!ELEMENT sucursal (cuenta+)>
+<!ATTLIST sucursal id ID #REQUIRED>
+<!ELEMENT cuenta (cliente+)>
+<!ATTLIST cuenta iban ID #REQUIRED>
+<!ELEMENT cliente (nombre,dni,direccion,telefono)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT dni (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>

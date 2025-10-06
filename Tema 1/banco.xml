@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE banco SYSTEM "banco.dtd">
+<banco>
+    <sucursal id="S001">
+        <cuenta iban="C001">
+            <cliente>
+                <nombre>Juan Carlos García Pérez</nombre>
+                <dni>76417641S</dni>
+                <direccion>Su casa</direccion>
+                <telefono>123456789</telefono>
+            </cliente>
+            <cliente>
+                <nombre>Pepe Paco Jimenez Jimenez</nombre>
+                <dni>95715761F</dni>
+                <direccion>Tambien su casa</direccion>
+                <telefono>198571852</telefono>
+            </cliente>
+        </cuenta>
+        <cuenta iban="C002">
+            <cliente>
+                <nombre>Francisco Fernandez Apellido</nombre>
+                <dni>83456836C</dni>
+                <direccion>Si</direccion>
+                <telefono>374694323</telefono>
+            </cliente>
+            <cliente>
+                <nombre>Diego Garcia</nombre>
+                <dni>21687424C</dni>
+                <direccion>Calle y casa</direccion>
+                <telefono>867517651</telefono>
+            </cliente>
+        </cuenta>
+    </sucursal>
+</banco>
