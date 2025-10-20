@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventario SYSTEM "t1_ej2.dtd">
+<inventario>
+    <item sku="1">
+        <nombre>Mesa Nïer</nombre>
+        <precio>55.90</precio>
+        <stock>23</stock>
+    </item>
+    <item sku="2">
+        <nombre>Florero Cars</nombre>
+        <precio>14.95</precio>
+        <stock>4</stock>
+    </item>
+</inventario>

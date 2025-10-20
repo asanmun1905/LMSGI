@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+    <question type="multichoice">
+        <name>Pregunta 1</name>
+        <questionText format="html">¿Cuántos meses tiene un año?</questionText>
+        <defaultGrade>5</defaultGrade>
+        <single>true</single>
+        <shuffleanswers>1</shuffleanswers>
+        <answernumbering>abc</answernumbering>
+        <answer fraction="100">12</answer>
+        <answer fraction="0">10</answer>
+        <answer fraction="0">18</answer>
+    </question>
+    <question type="truefalse">
+        <name>Pregunta 2</name>
+        <questionText format="html">¿Estamos dando LMSGI?</questionText>
+        <defaultGrade>5</defaultGrade>
+        <answer fraction="100">Verdadero</answer>
+        <answer fraction="0">Falso</answer>
+    </question>
+</quiz>

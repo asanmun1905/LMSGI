@@ -1,0 +1,78 @@
+/* Base mínima para empezar  */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background: #f0f0f0;
+}
+
+/* Zonas principales */
+
+.cabecera {
+    text-align: center;
+    padding: 1rem;
+}
+
+.titulo {
+    margin: 0;
+    color: #2c3e50;
+}
+
+#contenido-principal {
+    padding: 1rem;
+}
+
+.tarjeta { 
+    background: #fff;
+    border-radius: 12px;
+    width: min(900px, 95%);
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Listas y layout simple */
+
+.listas {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.lista {
+    padding-left: 20px;
+}
+
+.lista li {
+    margin: 0.25rem 0;
+}
+
+.pie {
+    text-align: center;
+    padding: 1rem;
+    color: #7f8c8b;
+    font-size: 14px;
+    background: #ecf0f1;
+}
+
+main {
+    padding: 1rem;
+    background: #fff;
+    width: min(900px, 95%);
+    margin: 1rem auto;
+    border-radius: 10px;
+}
+
+footer {
+    color: #7f8c8b;
+    font-size: 14px;
+    background: #ecf0f1;
+}   

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obra xmlns:cat="http://ejemplo.org/catalogo" xmlns:meta="http://ejemplo.org/metadata">
+    <cat:libro>
+        <cat:titulo>El Quijote</cat:titulo>
+        <cat:autor>Cervantes</cat:autor>
+    </cat:libro>
+    <meta:ficha>
+        <meta:titulo>Adrian Molina</meta:titulo>
+        <meta:anio>2015</meta:anio>
+    </meta:ficha>
+</obra>
