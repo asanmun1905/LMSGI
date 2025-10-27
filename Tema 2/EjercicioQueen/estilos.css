@@ -42,7 +42,7 @@ h1, h2 {
     border-radius: 10px;
 }
 
-.lista-integrantes {
+.lista {
     list-style: disc;
     padding-left: 20px;
 }
@@ -50,8 +50,6 @@ h1, h2 {
 .tabla-exitos {
     border-collapse: collapse;
     margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
@@ -59,21 +57,22 @@ h1, h2 {
     background: #2c3e50;
     color: white;
     text-align: center;
-    padding: 10px;
-    border: 1px solid #ddd;
 }
 
 .tabla-exitos td {
-    padding: 10px;
     text-align: left;
     white-space: nowrap;
+}
+
+.tabla-exitos td, .tabla-exitos th { 
     border: 1px solid #ddd;
+    padding: 10px;
 }
 
 a {
     color: #e74c3c;
     text-decoration: none;
-    font-style: bold;
+    font-weight: bold;
 }
 
 a:hover {
