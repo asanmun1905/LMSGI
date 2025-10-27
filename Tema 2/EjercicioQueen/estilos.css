@@ -28,6 +28,10 @@ h1, h2 {
     padding: 2rem;
 }
 
+main{
+    align-self: center;
+}
+
 .pie {
     color: #7f8c8d;
     text-align: center;
