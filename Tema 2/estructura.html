@@ -76,6 +76,35 @@
                 </tbody>
             </table>
         </section>
+
+        <!-- Formulario de busqueda -->
+        <section class="tarjeta">
+            <form name="buscar" action="buscar.html" method="get">
+                <label for="busqueda">Buscar juego: </label>
+                <input type="search" name="busqueda" id="busqueda"
+                placeholder="Escribe título" required>
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+        <!-- Formulario de registro -->
+        <section class="tarjeta">
+            <h2>Registro de usuario</h2>
+            <form name="register" action="registro.html" method="post">
+                <!-- Campo de texto -->
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="name" id="nombre" required>
+                <!-- Campo de password -->
+                <label for="clave">Contraseña:</label>
+                <input type="password" name="clave" id="clave" minlength="6" maxlength="12" required>
+                <!-- Campo numero -->
+                <label for="edad">Edad:</label>
+                <input type="number" name="edad" id="edad" min="0" required>
+                <button type="submit">Registrar</button>
+                <!-- Campo DNI -->
+                <label for="dni">DNI:</label>
+                <input type="text" name="id" id="dni" pattern="[0-9]{8}[A-Za-z]{1}" required>
+            </form>
+        </section>
     </main>
     <footer class="pie">
         <p>&copy; 2025 Todos los derechos reservados</p>

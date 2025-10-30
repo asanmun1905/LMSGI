@@ -26,10 +26,9 @@ h1, h2 {
     max-width: 500px;
     border-radius: 10px;
     padding: 2rem;
-}
-
-main{
-    align-self: center;
+    /* align-self: center; */
+    margin: auto;
+    flex-grow: 1;
 }
 
 .pie {
@@ -54,7 +53,7 @@ main{
 .tabla-exitos {
     border-collapse: collapse;
     margin-bottom: 20px;
-    justify-content: center;
+    margin: auto;
 }
 
 .tabla-exitos th {
