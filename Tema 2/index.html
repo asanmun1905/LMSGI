@@ -10,15 +10,16 @@
 <body>
     <header class="cabecera">
         <div class="brand">
-            <img class="logo" src="/Tema 2/imagenes/gamezone-logo.png" alt="Logo de GameZone">
+            <img class="logo" src="imagenes/gamezone-logo.png" alt="Logo de GameZone">
             <!-- <h1 class="titulo">GameZone</h1> -->
         </div>
         <nav class="navegacion">
             <ul class="menu">
-                <li><a href="#">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="#">Noticias</a></li>
                 <li><a href="#">Guías</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="pages/contacto.html">Contacto</a></li>
+                <li><a href="pages/registro.html">Registrarse</a></li>
             </ul>
         </nav>
     </header>
@@ -87,24 +88,56 @@
             </form>
         </section>
         <!-- Formulario de registro -->
-        <section class="tarjeta">
+        <!-- <section class="tarjeta">
             <h2>Registro de usuario</h2>
-            <form name="register" action="registro.html" method="post">
+            <form name="register" action="pages/registro.html" method="post"> -->
                 <!-- Campo de texto -->
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="name" id="nombre" required>
+                <!-- <label for="nombre">Nombre:</label>
+                <input type="text" name="name" id="nombre" required> -->
                 <!-- Campo de password -->
-                <label for="clave">Contraseña:</label>
-                <input type="password" name="clave" id="clave" minlength="6" maxlength="12" required>
+                <!-- <label for="clave">Contraseña:</label>
+                <input type="password" name="clave" id="clave" minlength="6" maxlength="12" required> -->
                 <!-- Campo numero -->
-                <label for="edad">Edad:</label>
+                <!-- <label for="edad">Edad:</label>
                 <input type="number" name="edad" id="edad" min="0" required>
-                <button type="submit">Registrar</button>
+                <button type="submit">Registrar</button> -->
                 <!-- Campo DNI -->
-                <label for="dni">DNI:</label>
+                <!-- <label for="dni">DNI:</label>
                 <input type="text" name="id" id="dni" pattern="[0-9]{8}[A-Za-z]{1}" required>
             </form>
-        </section>
+        </section> -->
+    <!-- Formulario de contacto -->
+    <section class="tarjeta">
+        <form name= "contacto" action="contacto.php" method="post" autocomplete="off">
+            <!-- Lista desplegable -->
+            <label for="categoria">Categoría de juego</label>
+            <select name="categoria" id="categoria">
+                <option value="categoria" disabled selected>- Selecciona categoría -</option>
+                <option value="rol">Rol</option>
+                <option value="aventura">Aventura</option>
+                <option value="deportes">Deportes</option>
+            </select>
+
+            <!-- Radio y checkbox -->
+            <p>Plataforma</p>
+            <label><input type="radio" name="plataforma" value="pc">PC</label>
+            <label><input type="radio" name="plataforma" value="ps5" required>PS5</label>
+
+            <p>Suscribirse a noticias</p>
+            <label><input type="checkbox" name="suscripcion" checked>Sí</label>
+
+            <!-- hidden se utiliza para enviar datos no visibles para el usuario -->
+            <input type="hidden" name="product-id" value="1234">
+            <!-- Text area -->
+            <br><label for="mensaje">Deja aquí tu mensaje:</label>
+            <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+            <!-- Fecha -->
+            
+            <!-- Botones -->
+            <br><input type="reset" value="Limpiar formulario">
+            <br><input type="submit" value="Contactar">
+        </form>
+    </section>
     </main>
     <footer class="pie">
         <p>&copy; 2025 Todos los derechos reservados</p>
