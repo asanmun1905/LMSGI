@@ -1,0 +1,72 @@
+body {
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.cabecera {
+    margin: auto;
+    padding: 1rem;
+}
+.logo {
+    height: 110px;
+    width: 300px;
+}
+
+#contenido-principal {
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+.formulario-incidencia {
+    background-color: #f4f1ed;
+    color: firebrick;
+    border: 9px 0 0;
+    border-color: darkgoldenrod;
+    border-radius: 7px;
+    width: 400px;
+}
+
+legend {
+    color: darkblue;
+    font-weight: bold;
+}
+
+.elemento-formulario {
+    display: flex;
+    gap: 10px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+.imagen-formulario input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.botones-incidencia input {
+    gap: 10px;
+}
+
+.pie {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.pie h3 {
+    color: #f7c600;
+}
+
+.pie a {
+    color: white;
+    text-decoration: none;
+}
+
+.pie img {
+    width: 48px;
+    height: 48px;
+}

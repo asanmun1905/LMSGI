@@ -4,30 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta author="Adrián Sánchez Muñoz">
-    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+    <title>Formulario de Incidencia</title>
 </head>
 <body>
     <header class="cabecera">
-        <img class="logo" src="/Tema 2/EjercicioFormulario/imagenes/IAT-LOGOTIPO.jpg" alt="Logo del CPIFP Alan Turing">
+        <img  class="logo" src="/Tema 2/EjercicioFormulario/imagenes/IAT-LOGOTIPO.jpg" alt="Logo del CPIFP Alan Turing">
     </header>
     <main id="contenido-principal">
-        <form action="">
-            <fieldset>
-                <legend></legend>
+        <form name= "incidencia" action="procesarincidencia.php">
+            <fieldset class="formulario-incidencia">
+                <legend>Nueva incidencia</legend>
                 <div class="elemento-formulario">
-
+                    <label for="profesor">Profesor*:</label>
+                    <input type="text" placeholder="Escribe tu nombre aquí." id="profesor" required>
                 </div>
-                <div class="elemento-formulario">
 
-                </div>
                 <div class="elemento-formulario">
-                    
+                    <label for="correo">Correo electrónico*:</label>
+                    <input type="text" placeholder="Escribe tu correo aquí" id="correo" required>
+                </div>
+
+                <div class="elemento-formulario">
+                    <label for="departamento">Departamento*:</label>
+                    <select name="departamento" id="departamento" required>
+                        <option value="categoria" disabled selected>-- Seleccione un departamento --</option>
+                        <option value="informatica">Informática</option>
+                        <option value="economia">Economía</option>
+                        <option value="mecanica">Mecánica</option>
+                        <option value="robotica">Robótica</option>
+                    </select>
+                </div>
+
+                <div class="elemento-formulario">
+                    <label for="aula">Aula*:</label>
+                    <input type="text" placeholder="Indica aquí el aula de la incidencia" id="aula" required>
+                </div>
+
+                <div class="elemento-formulario">
+                    <label for="fecha">Día de la incidencia*:</label>
+                    <input type="week" id="fecha" required>
+                </div>
+
+                <div class="elemento-formulario">
+                    <label for="hora">Hora de la incidencia*:</label>
+                    <input type="time" id="hora" required>
+                </div>
+
+                <div class="elemento-formulario">
+                    <label for="descripcion-incidencia">Descripción de la incidencia*:</label>
+                    <textarea name="descripcion-incidencia" id="descripcion-incidencia" required></textarea>
+                </div>
+
+                <div class="imagen-formulario">
+                    <label for="imagen-incidencia">Imagen de la incidencia (opcional):</label>
+                    <input type="file" name="imagen-incidencia" id="imagen-incidencia" accept=".png,.jpg,.jepg,.webp ">
+                </div>
+
+                <div class="botones-incidencia">
+                    <label for="envio-incidencia"></label>
+                    <input type="submit" id="envio-incidencia" value="Enviar incidencia">
+                    <label for="reset-incidencia"></label>
+                    <input type="reset" id="reset-incidencia" value="Borrar formulario">
                 </div>
             </fieldset>
         </form>
     </main>
     <footer class="pie">
-
+        <h3>Síguenos</h3>
+        <a href="https://www.facebook.com/cpifpalanturing">
+            <img src="imagenes/icons8-facebook-48.png" alt="Facebook del centro">
+        </a>
+        <a href="https://x.com/cpifpalanturing">
+            <img src="imagenes/icons8-twitter-48.png" alt="Twitter del centro">
+        </a>
+        <a href="https://www.instagram.com/cpifpalanturing/?hl=es">
+            <img src="imagenes/icons8-instagram-48.png" alt="Instagram del centro">
+        </a>
+        <a href="https://www.youtube.com/@cpifpalanturing">
+            <img src="imagenes/icons8-youtube-48.png" alt="Youtube del centro">
+        </a>
+        <a href="https://fpalanturing.es">
+            <img src="imagenes/icons8-website-48.png" alt="Website del centro">
+        </a>
     </footer>
 </body>
 </html>
