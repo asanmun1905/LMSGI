@@ -4,6 +4,7 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 .cabecera {
     margin: auto;
@@ -35,7 +36,7 @@ legend {
 
 .elemento-formulario {
     display: flex;
-    gap: 10px;
+    gap: 30px;
     margin: 0 auto;
     margin-bottom: 5px;
 }
@@ -46,8 +47,9 @@ legend {
     gap: 10px;
 }
 
-.botones-incidencia input {
+.botones-incidencia {
     gap: 10px;
+    padding: 10px;
 }
 
 .pie {
