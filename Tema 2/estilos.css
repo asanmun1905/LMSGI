@@ -292,6 +292,6 @@ Explicación:
     padding: 10px;
 }
 
-.contenedor-grid:nth-child(1) {
+.item-grid:nth-child(1) {
     background-color: #2c3e50;
 }
