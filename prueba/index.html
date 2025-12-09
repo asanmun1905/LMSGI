@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Interactivo Horizontal</title>
+    
+    <!-- Importamos tipografías variadas de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;800&family=Space+Mono&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- ESTILOS GENERALES Y RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #111;
+            color: white;
+            overflow: hidden; /* Ocultamos el scroll nativo del body */
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* --- FONDO INTERACTIVO --- */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.6;
+            transition: transform 0.1s ease-out;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(45deg, #ff0055, #ff5500);
+            top: 10%;
+            left: 20%;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #0055ff, #00ffaa);
+            bottom: 20%;
+            right: 10%;
+        }
+
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #aa00ff, #ff00aa);
+            top: 40%;
+            left: 50%;
+        }
+
+        /* --- MENÚ DE NAVEGACIÓN --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            font-family: 'Montserrat', sans-serif;
+            background: rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 300;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: #00ffaa;
+        }
+
+        /* --- CONTENEDOR DE SCROLL HORIZONTAL --- */
+        .scroll-container {
+            display: flex;
+            flex-direction: row;
+            width: 100vw;
+            height: 100vh;
+            overflow-x: auto; /* Permite scroll horizontal */
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory; /* Efecto imán */
+            scroll-behavior: smooth;
+        }
+
+        /* Ocultar barra de scroll visualmente pero mantener funcionalidad */
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background: #111;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 4px;
+        }
+
+        /* --- SECCIONES --- */
+        section {
+            min-width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+            position: relative;
+            padding: 80px;
+        }
+
+        .content {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- ESTILOS ESPECÍFICOS POR SECCIÓN (Tipografías y Visuales) --- */
+
+        /* Sección 1: Inicio */
+        #home {
+            font-family: 'Montserrat', sans-serif;
+        }
+        #home h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 0.9;
+            margin-bottom: 20px;
+        }
+        #home span {
+            color: #ff0055;
+        }
+
+        /* Sección 2: Proyectos */
+        #projects {
+            font-family: 'Space Mono', monospace;
+        }
+        #projects h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #00ffaa;
+            display: inline-block;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .project-card {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border: 1px solid #00ffaa;
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            background: #00ffaa;
+            color: black;
+        }
+
+        /* Sección 3: Sobre Mí */
+        #about {
+            font-family: 'Abril Fatface', cursive;
+        }
+        #about h2 {
+            font-size: 4rem;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+        #about p {
+            font-family: 'Montserrat', sans-serif; /* Texto legible */
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        /* Sección 4: Contacto */
+        #contact {
+            font-family: 'Permanent Marker', cursive;
+        }
+        #contact h2 {
+            font-size: 4rem;
+            color: #aa00ff;
+            transform: rotate(-5deg);
+            margin-bottom: 40px;
+        }
+        .btn-contact {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+        .btn-contact:hover {
+            background: #aa00ff;
+            color: white;
+            box-shadow: 0 0 20px #aa00ff;
+        }
+
+        /* --- RESPONSIVE (Móvil) --- */
+        @media (max-width: 768px) {
+            /* En móvil cambiamos a scroll vertical para mejor usabilidad */
+            .scroll-container {
+                flex-direction: column;
+                overflow-y: auto;
+                overflow-x: hidden;
+                scroll-snap-type: y mandatory;
+            }
+            section {
+                min-width: 100vw;
+                min-height: 100vh;
+                padding: 20px;
+            }
+            #home h1 { font-size: 3rem; }
+            #about h2 { font-size: 3rem; }
+            .project-grid { grid-template-columns: 1fr; }
+            nav { padding: 15px 20px; }
+            .nav-links { display: none; } /* Menú simplificado para demo */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fondo Interactivo -->
+    <div class="background-container">
+        <div class="shape shape-1" data-speed="0.05"></div>
+        <div class="shape shape-2" data-speed="0.02"></div>
+        <div class="shape shape-3" data-speed="0.08"></div>
+    </div>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="logo">PORTFOLIO.</div>
+        <div class="nav-links">
+            <a onclick="scrollToSection('home')">Inicio</a>
+            <a onclick="scrollToSection('projects')">Proyectos</a>
+            <a onclick="scrollToSection('about')">Sobre Mí</a>
+            <a onclick="scrollToSection('contact')">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Contenedor Principal (Sidescroll) -->
+    <main class="scroll-container" id="mainContainer">
+        
+        <!-- SECCIÓN 1: INICIO (Montserrat) -->
+        <section id="home">
+            <div class="content">
+                <h1>HOLA,<br>SOY <span>DEV</span>.</h1>
+                <p>Desarrollador creativo & diseñador visual.</p>
+                <br>
+                <small>Mueve el ratón y haz scroll lateral.</small>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: PROYECTOS (Space Mono) -->
+        <section id="projects">
+            <div class="content">
+                <h2>_PROYECTOS</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>01. E-Commerce</h3>
+                        <p>React + Node.js</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>02. Dashboard</h3>
+                        <p>Vue + Firebase</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>03. App Móvil</h3>
+                        <p>Flutter UI Kit</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>04. API Rest</h3>
+                        <p>Python Django</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: SOBRE MÍ (Abril Fatface + Montserrat) -->
+        <section id="about">
+            <div class="content" style="text-align: center;">
+                <div class="profile-pic"></div>
+                <h2>La Historia</h2>
+                <p>
+                    Me especializo en crear experiencias digitales que combinan diseño elegante con código robusto. 
+                    Cada proyecto es una oportunidad para contar una historia diferente a través de la web.
+                    Amante del café y el código limpio.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: CONTACTO (Permanent Marker) -->
+        <section id="contact">
+            <div class="content" style="text-align: center;">
+                <h2>¿Hablamos?</h2>
+                <p style="font-family: 'Montserrat', sans-serif; margin-bottom: 30px;">
+                    Estoy disponible para proyectos freelance.
+                </p>
+                <a href="#" class="btn-contact">ENVIAR MENSAJE</a>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // --- LÓGICA DEL BACKGROUND INTERACTIVO ---
+        document.addEventListener('mousemove', (e) => {
+            const shapes = document.querySelectorAll('.shape');
+            const x = e.clientX;
+            const y = e.clientY;
+
+            shapes.forEach(shape => {
+                const speed = shape.getAttribute('data-speed');
+                // Calculamos el movimiento opuesto al ratón
+                const xMove = (window.innerWidth - x * speed) / 10;
+                const yMove = (window.innerHeight - y * speed) / 10;
+                
+                shape.style.transform = `translate(${xMove}px, ${yMove}px)`;
+            });
+        });
+
+        // --- CONVERTIR SCROLL VERTICAL (RUEDA) EN HORIZONTAL ---
+        const scrollContainer = document.getElementById('mainContainer');
+
+        scrollContainer.addEventListener('wheel', (evt) => {
+            // Si la pantalla es ancha (escritorio), convertimos el scroll
+            if (window.innerWidth > 768) {
+                evt.preventDefault();
+                scrollContainer.scrollLeft += evt.deltaY;
+            }
+        });
+
+        // --- NAVEGACIÓN FLUIDA POR MENÚ ---
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            // center: centrará el elemento horizontalmente
+            element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+        }
+    </script>
+</body>
+</html>

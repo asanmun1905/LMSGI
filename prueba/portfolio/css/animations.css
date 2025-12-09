@@ -1,0 +1,164 @@
+/* Animaciones para el fondo interactivo */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+.bg-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+.bg-element:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.bg-element:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.bg-element:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.bg-element:nth-child(4) {
+    animation-delay: 2s;
+}
+
+.bg-element:nth-child(5) {
+    animation-delay: 2.5s;
+}
+
+/* Animaciones para las secciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.section:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.section:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.section:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.section:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.section:nth-child(5) {
+    animation-delay: 1s;
+}
+
+/* Animaciones para los proyectos */
+@keyframes projectHover {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.project-card:hover {
+    animation: projectHover 2s ease-in-out infinite;
+}
+
+/* Animación para el círculo de progreso */
+@keyframes progress {
+    0% {
+        stroke-dashoffset: 283;
+    }
+    100% {
+        stroke-dashoffset: calc(283 - (283 * var(--percent)) / 100);
+    }
+}
+
+.progress-bar {
+    animation: progress 1.5s ease-in-out forwards;
+}
+
+/* Animación para el texto tipografiado */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.typed-text {
+    border-right: 2px solid var(--primary-color);
+    animation: blink 0.7s infinite;
+}
+
+/* Animaciones para las formas geométricas */
+@keyframes rotateShape {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.shape-1 {
+    animation: rotateShape 20s linear infinite;
+}
+
+.shape-2 {
+    animation: rotateShape 15s linear infinite reverse;
+}
+
+.shape-3 {
+    animation: rotateShape 25s linear infinite;
+}
+
+/* Animación para el menú hamburguesa */
+@keyframes hamburgerAnim {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hamburger.active {
+    animation: hamburgerAnim 0.5s ease-in-out;
+}

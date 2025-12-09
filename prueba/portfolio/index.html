@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Interactivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Fondo interactivo -->
+    <div class="interactive-bg">
+        <div class="bg-element" data-speed="0.1"></div>
+        <div class="bg-element" data-speed="0.15"></div>
+        <div class="bg-element" data-speed="0.2"></div>
+        <div class="bg-element" data-speed="0.25"></div>
+        <div class="bg-element" data-speed="0.3"></div>
+    </div>
+
+    <!-- Menú de navegación -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">PORTFOLIO</div>
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active" data-font="playfair">Inicio</a></li>
+                <li><a href="#sobre-mi" data-font="rajdhani">Sobre mí</a></li>
+                <li><a href="#proyectos" data-font="space-mono">Proyectos</a></li>
+                <li><a href="#habilidades" data-font="playfair">Habilidades</a></li>
+                <li><a href="#contacto" data-font="rajdhani">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor principal con sidescroll -->
+    <div class="main-container">
+        <!-- Sección Inicio -->
+        <section id="inicio" class="section inicio-section">
+            <div class="section-content">
+                <h1 class="section-title playfair-font">Hola, soy <span class="highlight">Nombre Apellido</span></h1>
+                <div class="typing-container">
+                    <p class="typing-text space-mono-font">Desarrollador <span class="typed-text"></span></p>
+                </div>
+                <p class="section-description rajdhani-font">
+                    Creo experiencias digitales únicas combinando diseño y tecnología.
+                    Mi enfoque se centra en la innovación y la funcionalidad.
+                </p>
+                <a href="#proyectos" class="cta-button">Ver mi trabajo</a>
+            </div>
+            <div class="section-visual">
+                <div class="geometric-shape shape-1"></div>
+                <div class="geometric-shape shape-2"></div>
+                <div class="geometric-shape shape-3"></div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre mí -->
+        <section id="sobre-mi" class="section sobre-mi-section">
+            <div class="section-content">
+                <h2 class="section-title rajdhani-font">Sobre <span class="highlight">mí</span></h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="space-mono-font">
+                            Soy un apasionado del desarrollo web con más de 5 años de experiencia
+                            creando soluciones digitales innovadoras. Mi viaje comenzó con...
+                        </p>
+                        <p class="space-mono-font">
+                            Me especializo en <span class="skill-highlight">diseño interactivo</span>,
+                            <span class="skill-highlight">animaciones web</span> y
+                            <span class="skill-highlight">experiencias de usuario</span>.
+                        </p>
+                    </div>
+                    <div class="about-visual">
+                        <div class="circle-progress" data-percent="85">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="progress-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="progress-bar" cx="50" cy="50" r="45"></circle>
+                            </svg>
+                            <span class="progress-text">85%</span>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">JavaScript</div>
+                            <div class="skill-item">React</div>
+                            <div class="skill-item">CSS Animations</div>
+                            <div class="skill-item">UI/UX Design</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos -->
+        <section id="proyectos" class="section proyectos-section">
+            <div class="section-content">
+                <h2 class="section-title space-mono-font">Mis <span class="highlight">proyectos</span></h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('assets/images/project1.jpg');"></div>
+                        <div class="project-info">
+                            <h3 class="playfair-font">Proyecto Creativo</h3>
+                            <p class="rajdhani-font">Diseño interactivo con animaciones 3D</p>
+                            <div class="project-tags">
+                                <span>WebGL</span>
+                                <span>Three.js</span>
+                                <span>GSAP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('assets/images/project2.jpg');"></div>
+                        <div class="project-info">
+                            <h3 class="playfair-font">Aplicación Web</h3>
+                            <p class="rajdhani-font">Plataforma de gestión con dashboard interactivo</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>D3.js</span>
+                                <span>Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('assets/images/project3.jpg');"></div>
+                        <div class="project-info">
+                            <h3 class="playfair-font">Experiencia Inmersiva</h3>
+                            <p class="rajdhani-font">Narrativa interactiva con scroll triggering</p>
+                            <div class="project-tags">
+                                <span>GSAP</span>
+                                <span>ScrollMagic</span>
+                                <span>Web Audio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Habilidades -->
+        <section id="habilidades" class="section habilidades-section">
+            <div class="section-content">
+                <h2 class="section-title playfair-font">Mis <span class="highlight">habilidades</span></h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3 class="rajdhani-font">Frontend</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-name space-mono-font">HTML5/CSS3</div>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name space-mono-font">JavaScript (ES6+)</div>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name space-mono-font">React</div>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="rajdhani-font">Diseño</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-name space-mono-font">UI/UX Design</div>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 88%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name space-mono-font">Animaciones</div>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name space-mono-font">Figma</div>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="section contacto-section">
+            <div class="section-content">
+                <h2 class="section-title rajdhani-font">Contácta<span class="highlight">me</span></h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <p class="space-mono-font">¿Tienes un proyecto en mente o simplemente quieres saludar?</p>
+                        <p class="space-mono-font">Estoy siempre abierto a nuevas oportunidades y colaboraciones.</p>
+                        <div class="contact-details">
+                            <div class="detail-item">
+                                <span class="icon">📧</span>
+                                <span class="text">email@ejemplo.com</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="icon">📍</span>
+                                <span class="text">Ciudad, País</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="icon">🔗</span>
+                                <span class="text">linkedin.com/in/tuperfil</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" placeholder="Nombre" class="playfair-font">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" class="playfair-font">
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Mensaje" class="space-mono-font"></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="js/interactive-bg.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -75,19 +75,30 @@ body {
     color: #e74c3c;
 }
 
+/* Enlace activo del menú para indicar la página actual */
+
+.menu a.activo {
+    color: #e74c3c;
+    border-bottom: 2px solid #e74c3c;
+    padding: 0.2rem;
+}
+
 /* .menu li {
     display: inline-block;
 } */
 
 #contenido-principal {
     padding: 1rem;
-    flex-grow: 1; /* Aplicamos factor de crecimiento para empujar al footer*/
+    flex-grow: 1;
+    margin: 1rem auto;
+    width: min(1200px, 95%);
+    border-radius: 10px; /* Aplicamos factor de crecimiento para empujar al footer*/
 }
 
 .tarjeta { 
     background: #fff;
     border-radius: 10px;
-    width: min(900px, 95%);
+    width: min(1200px, 95%);
     margin: 1.5rem auto;
     padding: 1.5rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
@@ -142,13 +153,6 @@ body {
     color: #7f8c8b;
     font-size: 14px;
     background: #ecf0f1;
-}
-
-main {
-    padding: 1rem;
-    /* width: min(900px, 95%); */
-    margin: 1rem auto;
-    border-radius: 10px;
 }
 
 footer {
@@ -283,15 +287,79 @@ Explicación:
 
 /* ------------------ SECCION GRID: Introducción visual -------------------- */
 
+.parent {
+    display: grid;
+    grid-template: 100px 1fr 60px / 200px 2fr 1fr;
+    gap: 10px;
+    grid-template-areas:
+        "header header header"
+        "nav    main   aside"
+        "footer footer footer";
+}
+
+.area-header {
+    background-color: blue;
+    grid-area: header;
+}
+
+.area-nav {
+    background-color: aquamarine;
+    grid-area: nav;
+}
+
+.area-main {
+    background-color: green;
+    grid-area: main;
+}
+
+.area-aside {
+    background-color: red;
+    grid-area: aside;
+}
+
+.area-footer {
+    background-color: orange;
+    grid-area: footer;
+}
+
 .contenedor-grid {
     display: grid;                                  /* activar el modo grid */
-    grid-template-columns: 200px 200px 200px;       /* 3 columnas de anchura fija */
-    grid-template-rows: 100px 100px;                /* 2 filas de altura fija */
+    /* grid-template-columns: 200px 200px 200px;       /* 3 columnas de anchura fija */
+    /*grid-template-rows: 100px 100px;  */                   /* 2 filas de altura fija */
+    grid-template: repeat(2, 100px)/ repeat(3, 150px);           /* atajo de grid-template-rows + grid-template-columns */
     gap: 10px;                                      /* separación uniforme entre celdas (grid cell) */
     background-color: #eaeaea;
     padding: 10px;
+
+    /* Alineación dentro de cada celda */
+    justify-items: center;
+    justify-content: center;
 }
 
 .item-grid:nth-child(1) {
     background-color: #2c3e50;
+}
+.item-grid:nth-child(2) {
+    background-color: #509ae4;
+}
+.item-grid:nth-child(3) {
+    background-color: #7bc260;
+}
+.item-grid:nth-child(4) {
+    background-color: #da9fd8;
+}
+.item-grid:nth-child(5) {
+    background-color: #777d20;
+}
+.item-grid:nth-child(6) {
+    background-color: #b6b95c;
+}
+
+/* Seccion Juegos: Grid */
+
+.lista-cards--flex{
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(220, 1fr));
+    gap: 16px;
 }
